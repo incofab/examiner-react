@@ -9,6 +9,8 @@ export interface ExamTrack extends Exam {
 }
 
 export const baseUrl = process.env.REACT_APP_BASE_URL;
+export const usesInternet: boolean =
+  process.env.REACT_APP_USES_INTERNET === "true";
 
 export const ExamUrl = {
   EndExam: `${baseUrl}exam-route/end-exam.php`,

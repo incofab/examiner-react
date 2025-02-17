@@ -164,12 +164,16 @@ function ExamContent({
           })}
         </ul>
       </nav>
-      <ExamCourseComponent
-        exam={exam}
-        examCourse={activeExamCourse}
-        examUtil={examUtil}
-        key={activeExamCourse.id}
-      />
+      <div className="mb-1">
+        <ExamCourseComponent
+          exam={exam}
+          examCourse={activeExamCourse}
+          examUtil={examUtil}
+          key={activeExamCourse.id}
+        />
+      </div>
+      <br />
+      <br />
       <FooterNav
         nextClicked={nextClicked}
         previousClicked={previousClicked}
