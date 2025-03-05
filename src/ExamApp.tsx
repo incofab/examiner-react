@@ -17,7 +17,7 @@ export default function ExamApp() {
   const [error, setError] = useState(null);
   const webForm = useWebForm({});
   // console.log("ExamApp: examNo:", examNo);
-  // console.log("process.env.REACT_APP_BASE_URL", process.env.REACT_APP_BASE_URL);
+  // console.log("process.env.REACT_APP_EXAM_API_BASE_URL", process.env.REACT_APP_EXAM_API_BASE_URL);
 
   useEffect(() => {
     const fetchExamData = async () => {

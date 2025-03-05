@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cra-template-typescript": "1.2.0",
     "axios": "^1.7.9",
+    "cra-template-typescript": "1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5"
@@ -12,6 +12,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:standalone": "env-cmd -f .env.standalone npm run build",
+    "build:test_local": "env-cmd -f .env.test_local npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -19,6 +21,7 @@
     "@types/axios": "^0.14.4",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "env-cmd": "^10.1.0",
     "react-scripts": "^5.0.1",
     "typescript": "^4.9.5"
   },

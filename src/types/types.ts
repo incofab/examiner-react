@@ -8,7 +8,7 @@ export interface ExamTrack extends Exam {
   attempts: ExamAttempt;
 }
 
-export const baseUrl = process.env.REACT_APP_BASE_URL;
+export const baseUrl = process.env.REACT_APP_EXAM_API_BASE_URL;
 export const usesInternet: boolean =
   process.env.REACT_APP_USES_INTERNET === "true";
 
