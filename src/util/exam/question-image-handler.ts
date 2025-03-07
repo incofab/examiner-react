@@ -12,10 +12,6 @@ class QuestionImageHandler {
       `?course_id=${this.courseSession.course_id}&course_session_id=${this.courseSession.id}` +
       `&filename=${fileName}&session=${this.courseSession.session}&event_id=${this.exam.event_id}`
     );
-    // return (
-    //   K.ADDR_EXAM_BASE_IMG +
-    //   `/institutions/${this.courseSession.institution_id}/ccd/${this.courseSession.course_id}/${this.courseSession.id}/`
-    // );
   }
 
   handleImages(htmlStr: string) {
@@ -44,11 +40,12 @@ class QuestionImageHandler {
     if (!this.isValidImage(filename)) {
       filename = alt;
     }
-    return this.getQuestionBaseUrl() + filename;
+    return this.getQuestionBaseUrl(filename);
   }
 
   getUrlLastPath(urlPath: string): string {
     let lastPart = urlPath.split("/").pop();
+
     const base64DataIndex = urlPath.indexOf("data:");
     if (base64DataIndex > -1) {
       // Handle base64 images here
