@@ -58,13 +58,14 @@ export default function ExamPage({
     ) {
       return;
     }
+    await examUtil.getAttemptManager().sendAttempts(webForm);
     const res = await webForm.submit((data, web) => {
       return web.post(ExamUrl.EndExam, {
         exam_no: exam.exam_no,
         event_id: exam.event_id,
       });
     });
-    console.log(res);
+    // console.log(res);
     navigate(`/exam/submitted`, { replace: true });
     // window.location.href = `${ExamUrl.ExamLogin}`;
   }
