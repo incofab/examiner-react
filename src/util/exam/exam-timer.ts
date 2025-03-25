@@ -1,3 +1,5 @@
+import START_TIME from "../start-time";
+
 class ExamTimer {
   private intervalId: any;
   private readonly PING_INTERVAL = 5;
@@ -14,7 +16,7 @@ class ExamTimer {
   }
 
   start(duration: number) {
-    this.startTime = new Date();
+    this.startTime = START_TIME; //new Date();
     this.endTime = new Date(this.startTime);
     this.endTime.setSeconds(this.endTime.getSeconds() + duration);
 
