@@ -40,17 +40,19 @@ export default function PageHeader({
     <header className="app-header py-2">
       <div className="row w-100">
         <div className="col-7 text-truncate text-left">
-          <div className="pl-1" id="name">
+          <div className="ps-2" id="name">
             {exam.student?.firstname} {exam.student?.lastname}
           </div>
         </div>
         <div className="col-5">
           <div className="pr-3 clearfix" style={{ textAlign: "right" }}>
             <div className="float-right text-truncate">
-              <i
-                className="fa fa-calculator toggleCalculator pointer"
+              <button
+                className="btn btn-link text-white text-decoration-none"
                 onClick={toggleCalculator}
-              ></i>
+              >
+                <i className="fa fa-calculator toggleCalculator pointer"></i>
+              </button>
               <TimerView
                 timeRemaining={timeRemaining}
                 onIntervalPing={onIntervalPing}
@@ -84,5 +86,5 @@ function TimerView({
   function onTimerTick(timeRemaining: number) {
     setTimer(formatTime(timeRemaining) + "");
   }
-  return <div>{timer}</div>;
+  return <div className="d-inline-block">{timer}</div>;
 }

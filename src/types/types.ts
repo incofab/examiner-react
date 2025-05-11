@@ -17,4 +17,5 @@ export const ExamUrl = {
   AttemptQuestion: `${baseUrl}exam-route/attempt-question.php`,
   ExamLogin: `${baseUrl}exam/login`,
   StartExam: `${baseUrl}api/exam/start`,
+  CreateExamByCode: `${baseUrl}api/exam/create-by-code`,
 };

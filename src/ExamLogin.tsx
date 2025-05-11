@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import startTimeHandler from "./util/start-time";
 
 export default function ExamLogin() {
   const [examNo, setExamNo] = useState("");
@@ -8,6 +9,7 @@ export default function ExamLogin() {
   function handleSubmit(e) {
     e.preventDefault();
     if (examNo.trim()) {
+      startTimeHandler.reset();
       navigate(`/exam/${examNo}`);
     }
   }
@@ -35,9 +37,22 @@ export default function ExamLogin() {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary mt-4 px-4">
-                  Start
-                </button>
+                <div className="clearfix">
+                  <button
+                    type="submit"
+                    className="btn btn-primary mt-4 px-4 float-start"
+                  >
+                    Start
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-link text-success mt-4 px-4 float-end"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => navigate("/student")}
+                  >
+                    For Students
+                  </button>
+                </div>
               </form>
             </div>
           </div>

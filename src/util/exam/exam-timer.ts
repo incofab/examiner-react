@@ -1,4 +1,4 @@
-import START_TIME from "../start-time";
+import startTimeHandler from "../start-time";
 
 class ExamTimer {
   private intervalId: any;
@@ -16,7 +16,7 @@ class ExamTimer {
   }
 
   start(duration: number) {
-    this.startTime = START_TIME; //new Date();
+    this.startTime = startTimeHandler.getStartTime(); //START_TIME; //new Date();
     this.endTime = new Date(this.startTime);
     this.endTime.setSeconds(this.endTime.getSeconds() + duration);
 
